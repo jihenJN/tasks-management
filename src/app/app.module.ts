@@ -7,6 +7,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './auth/components/login/login.component';
 import { SignupComponent } from './auth/components/signup/signup.component';
 import { DemoAngularMaterailModule } from './DemoAngularMaterailModule';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,11 @@ import { DemoAngularMaterailModule } from './DemoAngularMaterailModule';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    DemoAngularMaterailModule
+    DemoAngularMaterailModule,
+    FormsModule,
+    ReactiveFormsModule
+
+
   ],
   providers: [],
   bootstrap: [AppComponent]
