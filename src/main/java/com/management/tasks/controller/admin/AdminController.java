@@ -25,4 +25,10 @@ public class AdminController {
        if(createdTaskDTO==null)  return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
        return ResponseEntity.status(HttpStatus.CREATED).body(createdTaskDTO);
     };
+
+
+    @GetMapping("/tasks")
+    public ResponseEntity<?> getAllTasks(){
+        return ResponseEntity.ok(adminService.getAllTasks());
+    }
 }
