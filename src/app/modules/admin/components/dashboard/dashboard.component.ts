@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { AdminService } from '../../services/admin.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,4 +8,16 @@ import { Component } from '@angular/core';
 })
 export class DashboardComponent {
 
+  listOfTasks:any=[];
+
+  constructor(private service:AdminService){
+    this.gatTasks();
+  }
+
+  gatTasks(){
+    this.service.getAllTasks().subscribe((res)=>{
+      console.log(res);
+      this.listOfTasks=res;
+    })
+  }
 }
