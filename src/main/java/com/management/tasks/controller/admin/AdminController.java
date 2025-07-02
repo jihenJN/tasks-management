@@ -26,20 +26,27 @@ public class AdminController {
        return ResponseEntity.status(HttpStatus.CREATED).body(createdTaskDTO);
     };
 
-
     @GetMapping("/tasks")
     public ResponseEntity<?> getAllTasks(){
         return ResponseEntity.ok(adminService.getAllTasks());
     }
 
-   @DeleteMapping("/task/{id}")
+    @DeleteMapping("/task/{id}")
     public ResponseEntity<Void> deleteTask(@PathVariable Long id){
         adminService.deleteTask(id);
         return ResponseEntity.ok(null);
     }
+
     @GetMapping("/task/{id}")
     public ResponseEntity<TaskDTO> getTaskById(@PathVariable Long id){
      return  ResponseEntity.ok(adminService.getTaskById(id));
+    }
+
+    @PutMapping ("/task/{id}")
+    public ResponseEntity<?> updateTask(@PathVariable Long id ,@RequestBody TaskDTO taskDTO){
+      TaskDTO updatedTask =  adminService.updteTask(id,taskDTO);
+      if(updatedTask==null) return ResponseEntity.notFound().build();
+      return ResponseEntity.ok(updatedTask);
     }
 
 }
