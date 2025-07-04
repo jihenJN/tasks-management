@@ -13,4 +13,5 @@ public interface AdminService {
     void deleteTask(Long id);
     TaskDTO getTaskById(Long id);
     TaskDTO updteTask(Long id, TaskDTO taskDTO);
+    List<TaskDTO> searchByTitle(String title);
 }
