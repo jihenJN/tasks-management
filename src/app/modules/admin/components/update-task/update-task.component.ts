@@ -14,6 +14,7 @@ export class UpdateTaskComponent {
  updatetaskForm!: FormGroup;
   listOfEmployees: any = [];
   listOfPriorities: any = ['LOW', 'MEDIUM', 'HIGH'];
+  listOfTaskStatus: any = [ 'PENDING', 'INPROGRESS', 'COMPLETED', 'DEFERRED', 'CANCELED'];
   constructor(private adminService: AdminService,  private snackBar:MatSnackBar,
       private router:Router,private service: AdminService,private fb: FormBuilder, private route: ActivatedRoute) {
     this.getUsers();
@@ -24,6 +25,7 @@ export class UpdateTaskComponent {
           description: [null, [Validators.required]],
           dueDate: [null, [Validators.required]],
           priority: [null, [Validators.required]],
+          taskStatus: [null, [Validators.required]],
         });
      console.log(this.id);
   }
