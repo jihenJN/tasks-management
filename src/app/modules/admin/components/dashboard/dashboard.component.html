@@ -34,6 +34,10 @@
                 routerLink="'/admin/task-details/'+ task.id +'/edit'">
                   <mat-icon>edit</mat-icon>
                 </a>-->
+                 <a mat-icon-button color="primary" class="update-button"
+                [routerLink]="['/admin/task', task.id, 'edit']">
+                  <mat-icon>edit</mat-icon>
+                </a>
                 <button mat-icon-button color="warn" class="delete-button"
                (click)="deleteTask(task.id)">
                     <mat-icon>delete</mat-icon>
