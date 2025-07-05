@@ -1,3 +1,13 @@
+
+
+<form class="search-form" [formGroup]="searchForm">
+    <mat-form-field appearance="outline" class="search-input">
+      <mat-label>Enter Keyword to search</mat-label>
+       <input matInput formControlName="title" (input)="searchTask()">
+    </mat-form-field>
+</form>
+
+
 <div class="task-list">
     <mat-card class="task-card" *ngFor="let task of listOfTasks">
         <div class="task-details">
@@ -30,10 +40,7 @@
                 routerLink="/admin/task-details/{{task.id}}">
                     <mat-icon>visibility</mat-icon>
                 </button>
-                <a mat-icon-button color="primary" class="update-button"
-                routerLink="'/admin/task-details/'+ task.id +'/edit'">
-                  <mat-icon>edit</mat-icon>
-                </a>-->
+                -->
                  <a mat-icon-button color="primary" class="update-button"
                 [routerLink]="['/admin/task', task.id, 'edit']">
                   <mat-icon>edit</mat-icon>

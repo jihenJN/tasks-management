@@ -46,7 +46,10 @@ export class AdminService {
     });
   }
 
+  searchTask(title:String):Observable<any>{
+    return this.http.get(BASIC_URL+`api/admin/tasks/search/${title}`,{  headers: this.createAuthorizationHeader()})
 
+  }
 
   private createAuthorizationHeader(): HttpHeaders {
     return new HttpHeaders().set(
